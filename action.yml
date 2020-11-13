@@ -1,6 +1,8 @@
 name: 'Automatic OpsGenie alert creation'
 description: 'Create an alert in OpsGenie for the specified GitHub issue'
-icon: alert-circle
+branding:
+  icon: 'alert-circle'  
+  color: 'green'
 inputs:
   api-key:  # OpsGenie API Key
     description: 'OpsGenie API Key'
