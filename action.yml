@@ -1,0 +1,12 @@
+name: 'Automatic OpsGenie alert creation'
+description: 'Create an alert in OpsGenie for the specified GitHub issue'
+inputs:
+  api-key:  # OpsGenie API Key
+    description: 'OpsGenie API Key'
+    required: true
+  opsgenie-api-url:  # OpsGenie API URL
+    description: 'OpsGenie API URL'
+    required: true
+runs:
+  using: 'node12'
+  main: 'dist/index.js'

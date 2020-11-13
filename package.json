@@ -1,0 +1,26 @@
+{
+  "name": "opsgenie-create-alert-action",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ricardofelgueiras/opsgenie-create-alert-action.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ricardofelgueiras/opsgenie-create-alert-action/issues"
+  },
+  "homepage": "https://github.com/ricardofelgueiras/opsgenie-create-alert-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.6",
+    "@actions/github": "^4.0.0",
+    "jest": "^26.6.3",
+    "opsgenie-sdk": "^0.4.3"
+  }
+}
