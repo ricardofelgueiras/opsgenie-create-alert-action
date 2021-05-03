@@ -209,6 +209,9 @@ try
     // Create OpsGenie alert
     opsGenieOperations.createAlert(github.context.payload, url, api_key);
 
+    core.info(github.context.payload);
+    
+
 } catch (error) {
     core.setFailed(error.message);
 }
@@ -59666,6 +59669,8 @@ function createAlert(issuePayload, url, apiKey) {
     });
 
     var create_alert_json = getJson(issuePayload.issue);
+
+    console.log(create_alert_json);
 
     opsGenie.alertV2.create(create_alert_json, function (error, alert) {
         if (error) {
