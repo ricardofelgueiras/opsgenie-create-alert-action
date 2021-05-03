@@ -11,6 +11,7 @@ try
     opsGenieOperations.createAlert(github.context.payload, url, api_key);
 
     core.info(github.context.payload);
+    
 
 } catch (error) {
     core.setFailed(error.message);
