@@ -8,8 +8,6 @@ function createAlert(issuePayload, url, apiKey) {
 
     var create_alert_json = getJson(issuePayload.issue);
 
-    console.log(create_alert_json);
-
     opsGenie.alertV2.create(create_alert_json, function (error, alert) {
         if (error) {
             console.error(error);
@@ -20,6 +18,9 @@ function createAlert(issuePayload, url, apiKey) {
 }
 
 function getJson(issue) {
+
+    console.log(JSON.stringify(issue));
+
     var create_alert_json = {
         "message": issue.title,
         "description": issue.html_url,
