@@ -20,7 +20,8 @@ try
     
     console.log(issue);
     console.log(JSON.stringify(issue));
-                
+
+
     // Create OpsGenie alert
     // opsGenieOperations.createAlert(context.payload, url, api_key);
 
