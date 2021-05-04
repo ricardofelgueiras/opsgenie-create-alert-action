@@ -9,9 +9,9 @@ try
     // const url = core.getInput('opsgenie-api-url');
     const github_token = core.getInput('github-token');
 
-    console.log(context.repo);
-    console.log(context.issue_number);
-    console.log(context.owner);
+    console.log(context.issue.repo);
+    console.log(context.issue.issue_number);
+    console.log(context.issue.owner);
     
     const octokit = github.getOctokit(github_token);
     const issue = (async () => {
