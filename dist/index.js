@@ -207,6 +207,10 @@ try
     // const api_key = core.getInput('api-key');
     // const url = core.getInput('opsgenie-api-url');
     const github_token = core.getInput('github-token');
+
+    console.log(context.repo);
+    console.log(context.issue_number);
+    console.log(context.owner);
     
     const octokit = github.getOctokit(github_token);
     const issue = (async () => {
@@ -216,7 +220,7 @@ try
                         owner: context.owner
                     })
                 })();
-    
+
     console.log(issue);
     console.log(JSON.stringify(issue));
 
