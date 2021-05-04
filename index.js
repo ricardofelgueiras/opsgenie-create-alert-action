@@ -4,15 +4,15 @@ const opsGenieOperations = require('./opsGenie');
 
 try 
 {
-    const api_key = core.getInput('api-key');
-    const url = core.getInput('opsgenie-api-url');
-
-    const octokit = github.getOctokit(api_key);
     const context = github.context;
-
+    // const api_key = core.getInput('api-key');
+    // const url = core.getInput('opsgenie-api-url');
+    const github_token = core.getInput('github-token');
+    
+    const octokit = github.getOctokit(github_token);
     const issue = (async () => {
                     return await octokit.issues.get({
-                        ...context.repo,
+                        repo: context.repo,
                         issue_number: context.issue_number,
                         owner: context.owner
                     })
@@ -27,4 +27,3 @@ try
 
 } catch (error) {
     core.setFailed(error.message);
-}

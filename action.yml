@@ -10,6 +10,9 @@ inputs:
   opsgenie-api-url:  # OpsGenie API URL
     description: 'OpsGenie API URL'
     required: true
+  github-token:  # GitHub Token
+    description: 'GitHub API token'
+    required: false
 runs:
   using: 'node12'
   main: 'dist/index.js'
