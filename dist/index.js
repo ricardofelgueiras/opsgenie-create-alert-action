@@ -218,9 +218,6 @@ try
                     })
                 })();
     issue.then(value => { 
-            console.log(value);
-            console.log(JSON.stringify(value));
-
             // Create OpsGenie alert
             opsGenieOperations.createAlert(value.data, url, api_key);
     });
@@ -59683,15 +59680,13 @@ function createAlert(issuePayload, url, apiKey) {
 
     var create_alert_json = getJson(issuePayload);
 
-    // opsGenie.alertV2.create(create_alert_json, function (error, alert) {
-    //     if (error) {
-    //         console.error(error);
-    //     } else {
-    //         console.log(alert);
-    //     }
-    // });
-    console.log(create_alert_json);
-    console.log(JSON.stringify(create_alert_json));
+    opsGenie.alertV2.create(create_alert_json, function (error, alert) {
+        if (error) {
+            console.error(error);
+        } else {
+            console.log(alert);
+        }
+    });
 }
 
 function getJson(issue) {

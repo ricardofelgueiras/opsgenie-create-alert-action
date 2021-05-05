@@ -19,9 +19,6 @@ try
                     })
                 })();
     issue.then(value => { 
-            console.log(value);
-            console.log(JSON.stringify(value));
-
             // Create OpsGenie alert
             opsGenieOperations.createAlert(value.data, url, api_key);
     });
