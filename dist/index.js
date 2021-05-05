@@ -216,12 +216,13 @@ try
                         owner: context.issue.owner
                     })
                 })();
+    issue.then(value => { 
+            console.log(value);
+            console.log(JSON.stringify(value));
+        });
 
-    console.log(issue);
-    console.log(JSON.stringify(issue));
-
-
-    console.log("done");
+    // console.log(x);
+    // console.log(JSON.stringify(x));
 
     // Create OpsGenie alert
     // opsGenieOperations.createAlert(context.payload, url, api_key);
