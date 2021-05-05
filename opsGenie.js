@@ -6,15 +6,17 @@ function createAlert(issuePayload, url, apiKey) {
         'host': url
     });
 
-    var create_alert_json = getJson(issuePayload.issue);
+    var create_alert_json = getJson(issuePayload);
 
-    opsGenie.alertV2.create(create_alert_json, function (error, alert) {
-        if (error) {
-            console.error(error);
-        } else {
-            console.log(alert);
-        }
-    });
+    // opsGenie.alertV2.create(create_alert_json, function (error, alert) {
+    //     if (error) {
+    //         console.error(error);
+    //     } else {
+    //         console.log(alert);
+    //     }
+    // });
+    console.log(create_alert_json);
+    console.log(JSON.stringify(create_alert_json));
 }
 
 function getJson(issue) {

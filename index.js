@@ -5,10 +5,11 @@ const opsGenieOperations = require('./opsGenie');
 try 
 {
     const context = github.context;
-    // const api_key = core.getInput('api-key');
-    // const url = core.getInput('opsgenie-api-url');
+    const api_key = core.getInput('api-key');
+    const url = core.getInput('opsgenie-api-url');
     const github_token = core.getInput('github-token');
     
+    // Get issue updated
     const octokit = github.getOctokit(github_token);
     const issue = (async () => {
                     return await octokit.issues.get({
@@ -20,13 +21,10 @@ try
     issue.then(value => { 
             console.log(value);
             console.log(JSON.stringify(value));
-        });
 
-    // console.log(x);
-    // console.log(JSON.stringify(x));
-
-    // Create OpsGenie alert
-    // opsGenieOperations.createAlert(context.payload, url, api_key);
+            // Create OpsGenie alert
+            opsGenieOperations.createAlert(value.data, url, api_key);
+    });
 
 } catch (error) {
     core.setFailed(error.message);
