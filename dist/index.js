@@ -207,23 +207,21 @@ try
     // const api_key = core.getInput('api-key');
     // const url = core.getInput('opsgenie-api-url');
     const github_token = core.getInput('github-token');
-
-    console.log(context.repo);
-    console.log(context.issue_number);
-    console.log(context.owner);
     
     const octokit = github.getOctokit(github_token);
     const issue = (async () => {
                     return await octokit.issues.get({
-                        repo: context.repo,
-                        issue_number: context.issue_number,
-                        owner: context.owner
+                        repo: context.issue.repo,
+                        issue_number: context.issue.number,
+                        owner: context.issue.owner
                     })
                 })();
 
     console.log(issue);
     console.log(JSON.stringify(issue));
 
+
+    console.log("done");
 
     // Create OpsGenie alert
     // opsGenieOperations.createAlert(context.payload, url, api_key);

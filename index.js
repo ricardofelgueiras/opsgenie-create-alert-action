@@ -22,6 +22,8 @@ try
     console.log(JSON.stringify(issue));
 
 
+    console.log("done");
+
     // Create OpsGenie alert
     // opsGenieOperations.createAlert(context.payload, url, api_key);
 
