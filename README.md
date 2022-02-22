@@ -1,6 +1,6 @@
 # OpsGenie alert creation 
 
-This action create an alert in OpsGenie (via API) for a specified issue. 
+This action creates an alert in OpsGenie (via API) for a specified issue. 
 Note: the issue must have a label containing the priority (P1, P2, P3, P4 or P5)
 
 ## Inputs
